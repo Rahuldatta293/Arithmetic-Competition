@@ -1,11 +1,19 @@
-#!/bin/bash
+#!/bin/bash -x
+
+a=10
+b=20
+c=30
+
+resultA=$(( (a+b) * c ))
+resultB=$(( a * (b+c) ))
+resultC=$(( c + (a/b) ))
+resultD=$(( a % (b+c) ))
 
 declare -A ArthmeticOPResults
 
-ArthmeticOPResults[a+b*c]="900"
-ArthmeticOPResults[a*b+c]="500"
-ArthmeticOPResults[c+a/b]="30"
-ArthmaticOPResults[a%(b+c)]="10"
+ArthmeticOPResults[exp1]=$resultA
+ArthmeticOPResults[exp2]=$resultB
+ArthmeticOPResults[exp3]=$resultC
+ArthmaticOPResults[exp4]=$resultD
 
-echo "All Result" ${ArthmeticOPResults[@]}
 
